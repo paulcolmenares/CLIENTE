@@ -1,0 +1,107 @@
+<div id="margen">
+  <div id="borde">
+
+    <fieldset>
+      <legend>Gestión Devoluciones: </legend>
+      <button id="btn1" class="button"><a routerLink="/mdevol" routerLinkActive="router-link-active">
+          <span class="mif-add mif-5x fg-black"></span></a></button>
+      <div class="etiqueta">
+        <label>Agregar Devolucion</label>
+      </div>
+
+      <div id="fi">
+        <label>Fecha:</label>
+        <select>
+          <option *ngFor="let item of lista" [value]="getID(item._links.self.href)">{{item.fecha |date:'dd/MM/yyyy'}}
+          </option>
+        </select>
+      </div>
+
+      <div id="estu">
+        <label for="">Estudiante:</label>
+        <select>
+          <option *ngFor="let item of per" [value]="getID(item._links.self.href)">{{item.ci}} </option>
+        </select>
+      </div>
+      <div id="radio">
+        <input type="radio" name="fav_language">
+        <label>Devueltos:</label>
+        <input type="radio" name="fav_language" value="CSS">
+        <label for="css">Prestados:</label>
+      </div>
+      <div id="tabla">
+        <table class="table striped">
+
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>CodDevolucion</th>
+              <th>Fecha</th>
+              <td>Estado</td>
+              <td>B</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of lista , let indice=index">
+
+              <td>{{indice+1}} </td>
+
+              <td> {{item.codd}} </td>
+              <td>{{item.fecha | date:'dd/MM/yyyy'}} </td>
+
+              <td>
+                <container-element [ngSwitch]="item.estado" color="light">
+                  <div *ngSwitchCase="1">
+                    <span class="mif-thumbs-up mif-3x fg-black"></span>
+                  </div>
+                  <div *ngSwitchCase="0">
+                    <span class="mif-thumbs-down mif-3x fg-black"></span>
+                  </div>
+                </container-element>
+              </td>
+              <td> <span class="mif-bin mif-3x fg-black" (click)="Eliminar(item)"></span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </fieldset>
+
+
+    <fieldset>
+      <div id="tabla2">
+        <legend>DETALLES DEL EJEMPLAR: </legend>
+        <button id="btn2" class="button"><a routerLink="/ddevol" routerLinkActive="router-link-active">
+            <span class="mif-add mif-5x fg-black"></span></a></button>
+        <div class="etiqueta1">
+          <label>Agregar Devolucion a un Ejemplar</label>
+        </div>
+        <table class="table striped">
+          <thead>
+            <tr>
+              <th>CodInv</th>
+
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let items of ejemp">
+              <td>{{ items.codinv}} </td>
+
+              <td>
+                <container-element [ngSwitch]="items.estado" color="light">
+                  <div *ngSwitchCase="1">
+                    <span class="mif-thumbs-up mif-3x fg-black"></span>
+                  </div>
+                  <div *ngSwitchCase="0">
+                    <span class="mif-thumbs-down mif-3x fg-black"></span>
+                  </div>
+                </container-element>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </fieldset>
+  </div>
+</div>

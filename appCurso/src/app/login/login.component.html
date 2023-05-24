@@ -1,0 +1,27 @@
+<div id="margen">
+  <div id="us"> 
+   
+    <form (ngSubmit)="onSubmit()" [formGroup]="f_user">   
+      <fieldset>  <legend>Conección al sistema:</legend>
+        <div class="form-group">          
+         <p>Usuario</p>
+            <input type="text" formControlName="user">
+</div>
+<div> 
+            <label position="floating">Clave* </label>
+            <input type="password" formControlName="pass" >
+         </div>
+         <div class="boton1">
+        <button class="btn" class="btn btn-secondary" type="submit" [disabled]="f_user.invalid">Aceptar</button> 
+     </div>
+     <div class="boton2">
+        <button class="btn" class="btn btn-secondary" type="reset" >Cancelar</button> 
+      </div>
+      </fieldset>
+      </form>
+    
+    </div>
+       
+       
+</div>
+

@@ -1,0 +1,44 @@
+#margen{
+    background: radial-gradient(rgb(63, 219, 219), rgb(9, 122, 122));
+    top: 10px;
+    left: 280px;
+    width: 80%;
+    color: white;
+}
+
+input:valid{
+    border: 2px solid rgb(132, 221, 81);
+}
+input:invalid{
+    border: 2px solid rgba(165, 21, 21, 0.959);
+}
+
+#borde{
+    top: 2%;
+     left: 15%;
+     width: 70%;
+ }
+ input{
+     width: 50%;
+ }
+ select{
+    width: 50%;
+ }
+ 
+ #btn1{
+     left: 20%;
+ }
+ #btn2{
+    top: -40px;
+     left: 40%;
+ }
+ .btn{
+    background: #000000;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    color: #ffffff;
+   
+ }
+ #tabla{
+     width: 70%;
+ }

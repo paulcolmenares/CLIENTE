@@ -1,0 +1,27 @@
+<div id="margen">
+
+    <div id="borde">
+       <fieldset>
+           <legend>Adicionar Nuevo Menú..</legend>
+          <form (ngSubmit)="Enviar()" #form_menu="ngForm" >
+            <label type="number" name="codm" placeholder="Nombre" [(ngModel)]="menu.codm"></label>
+            
+            <div class="row mb-2">
+                <label class="cell-sm-2">Nombre del Menú: </label>
+                <input type="text" name="nombre"  [(ngModel)]="menu.nombre" required> 
+            </div>
+
+            <div>
+                <label name="estado" [(ngModel)]="menu.estado" value="0" required></label>
+              </div>
+              <div id="btn1">
+            <button type="submit" class="btn" class="btn btn-secondary" [disabled]="!form_menu.valid">Guardar</button>
+        </div>  
+        <div id="btn2">
+            <button type="reset" class="btn" class="btn btn-secondary">Cancelar</button>
+        </div>
+     </form>
+
+        </fieldset>
+    </div>
+    </div>

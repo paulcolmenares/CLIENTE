@@ -1,0 +1,48 @@
+<div id="margen">
+  <button ><a routerLink="/list_ejemplar" routerLinkActive="router-link-active"> 
+    <span class="mif-arrow-left mif-4x fg-black"></span></a></button>
+<div id="borde">
+   <fieldset>
+       <legend>Adicionar Nuevo Ejemplar:</legend>
+
+<form (ngSubmit)="Enviar()" #form_ejem="ngForm">
+    <div class="row mb-2"> 
+   <label class="cell-sm-2">Nro. Inventario:</label>
+   <input type="number" name="codinv" [(ngModel)]="ejem.codinv" required>
+</div>
+<div>
+   <label name="disponible" [(ngModel)]="ejem.disponible" value="1" required></label>
+ </div>
+ <div class="row mb-2">
+  <label class="cell-sm-2">Disponible:</label>  
+  <div> 
+      <input type="radio" data-role="radio" name="disponible"  value="1" [(ngModel)]="ejem.disponible" data-caption="Libre" required>
+      <input type="radio" data-role="radio" name="disponible" value="0" [(ngModel)]="ejem.disponible" data-caption="Ocupado" required>
+    </div>
+</div>
+
+ <div class="row mb-2">
+  <label class="cell-sm-2">Estado:</label>  
+  <div> 
+      <input type="radio" data-role="radio" name="estado"  value="1" [(ngModel)]="ejem.estado" data-caption="Activo" required>
+      <input type="radio" data-role="radio" name="estado" value="0" [(ngModel)]="ejem.estado" data-caption="Anulado" required>
+    </div>
+</div>
+ <div class="row mb-2" id="area">
+   <label class="cell-sm-3">Texto:</label>
+   <select name="codt" [(ngModel)]="ejem.codt">
+     <option *ngFor="let item of text" [value]="item._links.self.href">{{item.titulo}} </option>
+   </select>
+ </div>
+
+
+ <div id="btn1">
+   <button type="submit" class="btn" class="btn btn-secondary" [disabled]="!form_ejem.valid">Guardar</button>
+</div>  
+<div id="btn2">
+   <button type="reset"class="btn" class="btn btn-secondary" >Cancelar</button>
+  </div>
+   </form>
+</fieldset>
+</div>
+</div>

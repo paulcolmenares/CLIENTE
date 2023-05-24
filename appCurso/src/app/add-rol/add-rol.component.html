@@ -1,0 +1,35 @@
+<div id="margen">
+
+    <div id="borde">
+       <fieldset>
+           <legend>Adicionar Nuevo Rol:</legend>
+           <form (ngSubmit)="Enviar()" #form_rol="ngForm" >
+            
+            <label type="number" name="codr" placeholder="Nombre" [(ngModel)]="rol.codr"></label>
+             <div class="row mb-2">
+              <label class="cell-sm-2">Nombre: </label>
+              <input type="text" name="nombre" placeholder="Nombre" [(ngModel)]="rol.nombre" required> 
+             </div> 
+          
+             <div class="row mb-2">
+                <label class="cell-sm-2">Estado: </label>
+                <div class="cell-sm-10">
+                    <input type="radio" data-role="radio" name="estado" value="1" [(ngModel)]="rol.estado"
+                        data-caption="Activo" required>
+                    <input type="radio" data-role="radio" name="estado" value="0" [(ngModel)]="rol.estado"
+                        data-caption="Anulado" required>
+                </div>
+            </div>
+              <div id="btn1">
+        <button type="submit" class="btn" class="btn btn-secondary" [disabled]="!form_rol.valid">Guardar</button>
+    </div>  
+    <div id="btn2">
+        <button type="reset" class="btn" class="btn btn-secondary">Cancelar</button>
+    </div>
+        
+          </form>
+
+
+        </fieldset>
+    </div>
+    </div>

@@ -1,0 +1,30 @@
+
+<div id="margen"> 
+    <button  class="button"><a routerLink="/asig_usuario" routerLinkActive="router-link-active">
+        <span class="mif-arrow-left mif-4x fg-black"></span></a></button>
+    <div id="borde">
+        <fieldset>
+          <legend>Lista de Datos:</legend>    
+          <table class="table striped">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>CI</th>
+                <th>CodPersona</th>
+          <th>B</th> 
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of datos ,  let indice=index">
+                <td>{{indice+1}} </td>
+                <td>{{ item.ci}}</td>
+               <td>{{item.codper}} </td>
+                <td>
+                  <span class="mif-bin mif-3x fg-black" (click)="Eliminar(item)"></span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </fieldset>
+      </div>
+</div>

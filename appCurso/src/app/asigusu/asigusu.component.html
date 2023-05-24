@@ -1,0 +1,42 @@
+<div id="margen"> 
+    <button class="button"><a routerLink="/asig_usuario" routerLinkActive="router-link-active">
+        <span class="mif-arrow-left mif-4x fg-black"></span></a></button>
+    <div id="borde">
+        <fieldset>
+          <legend>Lista de Usuarios:</legend>         
+          <table class="table striped">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Login</th>
+                <th>Password</th>
+                <th>Estado</th>
+                <th>B</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of datos ,  let indice=index">
+                <td>{{indice+1}} </td>
+                <td>{{item.login}} </td>
+                <td>{{ item.passwd}}</td>
+                <td>
+                  <container-element [ngSwitch]="item.estado" color="light">
+                    <div *ngSwitchCase="1">
+                      <span class="mif-thumbs-up mif-3x fg-black"></span>
+                    </div>
+                    <div *ngSwitchCase="0">
+                      <span class="mif-thumbs-down mif-3x fg-black"></span>
+                    </div>
+                  </container-element>
+                </td>
+        
+                <td>
+                  <span class="mif-bin mif-3x fg-black" (click)="Eliminar(item)"></span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </fieldset>
+      </div>
+</div>
+

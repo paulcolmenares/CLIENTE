@@ -1,0 +1,162 @@
+<div id="margen">
+  <div id="borde">
+
+    <fieldset>
+      <legend>Gestión Prestamos: </legend>
+      <button class="button" id="btn1"><a routerLink="/add_prestamo" routerLinkActive="router-link-active">
+          <span class="mif-add mif-5x fg-black"></span></a>
+      </button>
+      <div class="etiqueta">
+        <label>Nuevo Prestamo</label>
+      </div>
+
+      <div id="fi">
+        <label>Fecha Inicio:</label>
+        <select>
+          <option *ngFor="let item of lista" [value]="getID(item._links.self.href)">{{item.fini |date:'dd/MM/yyyy'}}
+          </option>
+        </select>
+      </div>
+
+      <div id="ff">
+        <label for="">Fecha Fin:</label>
+        <select>
+          <option *ngFor="let item of lista" [value]="getID(item._links.self.href)">{{item.ffin |date:'dd/MM/yyyy'}}
+          </option>
+        </select>
+      </div>
+
+
+      <div id="estu">
+        <label for="">Estudiante:</label>
+        <select>
+          <option *ngFor="let item of per" [value]="getID(item._links.self.href)">{{item.ci}} </option>
+        </select>
+      </div>
+
+
+      <div id="radio">
+        <input type="radio" name="fav_language">
+        <label>Activos:</label>
+        <input type="radio" name="fav_language" value="CSS">
+        <label for="css">Bajas:</label>
+        <input type="radio" name="fav_language">
+        <label>Todos:</label>
+      </div>
+      <div id="tabla">
+        <table class="table striped">
+          <!--data-role="table" data-rows="5"-->
+
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>CodPrestamo</th>
+              <th>Fecha</th>
+              <th>Estudiante</th>
+              <th>F.Inicio</th>
+              <th>F.Fin</th>
+              <td>Tipo Prestamo</td>
+              <td>Estado</td>
+              <td>B</td>
+              <td>V</td>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr *ngFor="let item of datos , let indice=index">
+              <td>{{indice+1}} </td>
+
+              <td> {{item.codp}} </td>
+              <td>{{item.fecha | date:'dd/MM/yyyy'}} </td>
+              <td></td>
+              <td>{{item.fini | date:'dd/MM/yyyy'}} </td>
+              <td>{{item.ffin | date:'dd/MM/yyyy'}} </td>
+
+              <td>
+                <container-element [ngSwitch]="item.tipopres" color="light">
+                  <div *ngSwitchCase="1">Domicilio </div>
+                  <div *ngSwitchCase="2"> Sala </div>
+                </container-element>
+              </td>
+              <td>
+                <container-element [ngSwitch]="item.estado" color="light">
+                  <div *ngSwitchCase="1">
+                    <span class="mif-thumbs-up mif-3x fg-black"></span>
+                  </div>
+                  <div *ngSwitchCase="0">
+                    <span class="mif-thumbs-down mif-3x fg-black"></span>
+                  </div>
+                </container-element>
+              </td>
+              <td> <span class="mif-bin mif-3x fg-black" (click)="Eliminar(item)"></span> </td>
+              <td> <span class="mif-printer mif-3x fg-black" (click)="pdf()"></span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </fieldset>
+    <div id="tabla2">
+   
+      <fieldset>
+        <legend>DETALLES DEL EJEMPLAR: </legend>
+        <table class="table striped">
+          <thead>
+            <tr>
+              <th>CodInv</th>
+           
+              <th>Estado</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let items of listas">
+              <td>{{ items.codinv}} </td>
+              <td>
+                <container-element [ngSwitch]="items.estado" color="light">
+                  <div *ngSwitchCase="1">
+                    <span class="mif-thumbs-up mif-3x fg-black"></span>
+                  </div>
+                  <div *ngSwitchCase="0">
+                    <span class="mif-thumbs-down mif-3x fg-black"></span>
+                  </div>
+                </container-element>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </fieldset>
+    </div>
+
+
+
+    <div id="tabla3">
+
+      <fieldset>
+        <legend>PRESTAMO DE UN EJEMPLAR: </legend>
+        <form [formGroup]="dprestamo">
+
+          <div>
+            <label for=""> Ejemplares</label>
+            <select value="ejemplar" placeholder="Seleccione un ejemplar" formControlName="ejem">
+              <option *ngFor="let items of listas" value="{{items._links.self.href}}">{{ items.codinv}} </option>
+            </select>
+          </div>
+          <div>
+            <label for=""> Mprestamo</label>
+            <select value="prestamo" placeholder="Seleccione un prestamo" formControlName="pres">
+              <option *ngFor="let item of lista" value="{{item._links.self.href}}">{{item.codp}} - {{item.fecha |date :'dd/MM/yyyy'}}
+              </option>
+            </select>
+          </div>
+          <div id="boton1"> 
+
+          <button class="btn" (click)="Agregar()">Añadir</button>
+        </div>
+        <div id="boton2">
+          <button  class="btn"(click)="Eliminaron()">Eliminar</button>
+        </div>
+        </form>
+      </fieldset>
+    </div>
+  </div>
+</div>

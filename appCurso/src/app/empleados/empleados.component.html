@@ -1,0 +1,47 @@
+<div id="margen">
+    <div id="borde">
+
+        <fieldset>
+            <legend>Gestión Empleados:</legend>
+
+            <button id="btn1" class="button"><a routerLink="/add_autor" routerLinkActive="router-link-active">
+                    <span class="mif-add mif-4x fg-black"></span></a></button>
+            <div class="etiqueta">
+                <label>Nuevo Autor</label>
+            </div>
+            <label>Filtro:</label>
+            <div class="form-group" id="filtro">
+
+                <input type="text" placeholder="Buscar.." class="form-control" name="filterPost">
+            </div>
+
+            <table class="table striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Apellidos y Nombres</th>
+
+                        <th>id</th>
+                        <th>celular</th>
+                        <th>ci</th>
+                        <th>sexo</th>
+                        <th>V</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of datos, let indice=index">
+                        <td>{{indice+1}} </td>
+                        <td> {{ item.apaterno | uppercase}} {{ item.amaterno | uppercase}} {{ item.nombres | uppercase}}
+                        </td>
+
+                        <td> {{ item.id}}</td>
+                        <td> {{ item.celular}} </td>
+                        <td> {{ item.ci}} </td>
+                        <td> {{ item.sexo}} </td>
+                    </tr>
+                </tbody>
+            </table>
+        </fieldset>
+
+    </div>
+</div>

@@ -1,0 +1,19 @@
+#margen{
+    background: radial-gradient(rgb(63, 219, 219), rgb(9, 122, 122));
+    top: 10px;
+    left: 280px;
+    width: 80%;
+    height: 90ex;
+    color: white;
+}
+
+ #borde{
+    top: 2%;
+     left: 25%;
+     width: 40%;
+ }
+ #borde1{
+   
+     left: 15%;
+     width: 60%;
+ }

@@ -1,0 +1,31 @@
+#margen{
+    background: radial-gradient(rgb(63, 219, 219), rgb(9, 122, 122));
+    top: 10px;
+    left: 280px;
+    width: 80%;
+    height: 90ex;
+    color: white;
+}
+#us{
+    top: 30px;
+    left: 100px;
+    width: 30%;
+}
+.boton1{
+    position: absolute;
+   top: 230px;
+    left: 30px;
+}
+.boton2{
+    position: absolute;
+    top: 230px;
+     left: 130px;
+ }
+
+.btn{ 
+
+    background: #000000;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    color: #ffffff;
+}

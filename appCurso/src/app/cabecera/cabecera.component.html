@@ -1,0 +1,28 @@
+
+ <div id="cabecera">
+  <img  id="logo"
+    src="https://images.vexels.com/media/users/3/144524/raw/fdfe18cc8108550335a9117e297f2fa1-diseno-de-plantilla-de-logotipo-de-biblioteca.jpg"
+  />
+
+  <p> Tarija {{ hoy | date:'dd/MM/yyyy - h:mm:ss a' }} </p>
+  
+  <p id="nombre">USUARIO CONECTADO</p>
+  <select >
+    <option *ngFor="let item of rol" [value]="item._links.self.href">
+      {{item.nombre}} </option>
+  </select>
+
+<span class="mif-user mif-7x fg-white" id="user" onclick="Metro.dialog.open('#demoDialog1')"></span>
+<!-- ventata de dialogo-->
+<div class="dialog" data-role="dialog" id="demoDialog1">
+    <div class="dialog-content">
+       <label for=""> Conetarse al Sistema</label>     
+    </div>
+    <div class="dialog-actions">
+        <button class="button" > <a routerLink="/login" routerLinkActive="router-link-active">Conectarse</a></button>
+        <button class="button primary js-dialog-close"> cerrar</button>
+        <button class="button"> Desconectarse</button>
+    </div>
+</div>
+<!-- AUTENTIFICAION-->
+</div>

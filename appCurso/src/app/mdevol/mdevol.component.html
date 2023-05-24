@@ -1,0 +1,95 @@
+<div id="margen">
+  <button ><a routerLink="/list_devol" routerLinkActive="router-link-active"> 
+    <span class="mif-arrow-left mif-4x fg-black"></span></a></button>
+<div id="borde">
+  <fieldset>
+    <legend>Agregar Devolucion: </legend>
+ 
+
+<form (ngSubmit)="Enviar()" #form_devol="ngForm" >
+            
+     <div class="row mb-2">
+      <label class="cell-sm-2">Fecha: </label>
+      <input type="date" name="fecha" ngModel required> 
+     </div> 
+  
+     <div class="row mb-2">
+        <label class="cell-sm-2">Estado: </label>
+        <div class="cell-sm-10">
+            <input type="radio" data-role="radio" name="estado" value="1" ngModel
+                data-caption="Activo" required>
+            <input type="radio" data-role="radio" name="estado" value="0" ngModel          
+                  data-caption="Anulado" required>
+        </div>
+    </div>
+    <div class="row mb-2">
+        <label class="cell-sm-3">Mprestamo:</label>
+        <select name="codp" ngModel required>
+          <option *ngFor="let item of mv" [value]="item._links.self.href">{{item.codp}} - {{item.fecha|date}} </option>
+        </select>
+      </div>
+      <div class="row mb-2">
+        <label class="cell-sm-3">Usuario:</label>
+        <select name="login" ngModel required>
+          <option *ngFor="let item of usu" [value]="item._links.self.href">{{item.login}}</option>
+        </select>
+      </div>
+      <div id="boton">
+<button type="submit" class="btn" class="btn btn-secondary" >Guardar</button>
+</div>  
+<div id="boton1">
+<button type="reset" class="btn" class="btn btn-secondary">Cancelar</button>
+</div>
+
+  </form> 
+  <div id="tabla"> 
+    <table class="table striped">
+   
+          <thead>  
+            <tr>
+              <th>#</th>
+              <th >CodPrestamo</th>
+              <th>Fecha</th>
+              <th>Estudiante</th>
+              <th>F.Inicio</th>
+              <th>F.Fin</th>
+              <td>Tipo Prestamo</td>
+              <td>Estado</td>
+              
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of lista , let indice=index"> 
+               
+              <td>{{indice+1}} </td>
+  
+              <td> {{item.codp}} </td>
+              <td>{{item.fecha | date:'dd/MM/yyyy'}} </td>
+              <td></td>
+              <td>{{item.fini | date:'dd/MM/yyyy'}} </td>
+              <td>{{item.ffin | date:'dd/MM/yyyy'}} </td>
+  
+              <td>
+                <container-element [ngSwitch]="item.tipopres" color="light">
+                  <div *ngSwitchCase="1">Domicilio </div>
+                  <div *ngSwitchCase="2"> Sala </div>
+                </container-element>
+              </td>
+              <td>
+                <container-element [ngSwitch]="item.estado" color="light">
+                  <div *ngSwitchCase="1">
+                    <span class="mif-thumbs-up mif-3x fg-black"></span>
+                  </div>
+                  <div *ngSwitchCase="0">
+                    <span class="mif-thumbs-down mif-3x fg-black"></span>
+                  </div>
+                </container-element>
+              </td>
+         
+             </tr>
+          </tbody>
+        </table>
+      </div>
+</fieldset>
+</div>
+ </div>

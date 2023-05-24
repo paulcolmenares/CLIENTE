@@ -1,0 +1,69 @@
+<div id="margen">
+  <button ><a routerLink="/list_texto" routerLinkActive="router-link-active"> 
+    <span class="mif-arrow-left mif-4x fg-black"></span></a></button>
+  <div id="borde">
+    <fieldset>
+      <legend>Adicionar Nuevo Texto:</legend>
+
+      <form (ngSubmit)="Enviar()" #form_texto="ngForm">
+        <label type="number" name="codt" placeholder="Nombre" [(ngModel)]="text.codt"></label>
+        <div class="row mb-2">
+          <label class="cell-sm-1"> Titulo:</label>
+          <input type="text" name="titulo" class="primary" [(ngModel)]="text.titulo" required>
+        </div>
+
+        <div class="row mb-2" id="isbn">
+          <label class="cell-sm-3">ISBN:</label>
+          <input type="text" name="isbn" [(ngModel)]="text.isbn">
+        </div>
+        
+        <div class="row mb-2">
+          <label class="cell-sm-2">Estado: </label>
+          <div class="cell-sm-10">
+              <input type="radio" data-role="radio" name="estado" value="1" [(ngModel)]="text.estado"
+                  data-caption="Activo" required>
+              <input type="radio" data-role="radio" name="estado" value="0" [(ngModel)]="text.estado"
+                  data-caption="Anulado" required>
+          </div>
+      </div>
+        <div class="row mb-2" id="edicion">
+          <label class="cell-sm-3">Edicion:</label>
+          <input type="number" name="edicion" [(ngModel)]="text.edicion">
+        </div>
+
+        <div class="row mb-2" id="fp">
+          <label class="cell-sm-1.5">Fecha Pub.</label>
+          <input type="date" id="f" name="fechapub" [(ngModel)]="text.fechapub">
+        </div>
+
+        <div class="row mb-2" id="editorial">
+        <label class="cell-sm-4"> Editorial:</label>
+        <select name="code" [(ngModel)]="text.code">
+          <option *ngFor="let item of edi" [value]="item._links.self.href">
+            {{item.nombre}} </option>
+        </select>
+      </div>
+
+<div class="row mb-2" id="area">
+        <label class="cell-sm-3">Areas:</label>
+        <select name="coda" [(ngModel)]="text.coda">
+          <option *ngFor="let item of are" [value]="item._links.self.href">{{item.nombre}} </option>
+        </select>
+      </div>
+ 
+
+        <div class="row mb-2" >
+          <label class="cell-sm-1">Resumen: </label>
+          <input type="text" name="resumen" [(ngModel)]="text.resumen">
+        </div>
+
+        <div id="btn1">
+          <button type="submit" class="btn" class="btn btn-secondary" [disabled]="!form_texto.valid">Agregar</button>
+        </div>
+        <div id="btn2">
+          <button type="reset" class="btn" class="btn btn-secondary">Cancelar</button>
+        </div>
+      </form>
+    </fieldset>
+  </div>
+</div>

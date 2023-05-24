@@ -1,0 +1,60 @@
+<div id="margen">
+  <div id="borde">
+<fieldset>
+    <legend>Buscar Ejemplares por:</legend>
+    <div class="row mb-2">
+      <label class="cell-sm-2">Titulo: </label>
+      <input type="text" >
+     </div> 
+     <div class="row mb-2">
+      <label class="cell-sm-2">Autor: </label>
+      <input type="text" >
+       
+     </div> 
+     <div class="row mb-2" id="area">
+      <label class="cell-sm-3">Areas:</label>
+      <select name="coda" ngModel>
+        <option *ngFor="let item of are" [value]="item._links.self.href">{{item.nombre}} </option>
+      </select>
+    </div>
+
+    <div class="row mb-2">
+      <label class="cell-sm-4"> Editorial:</label>
+      <select name="code" ngModel>
+        <option *ngFor="let item of edi" [value]="item._links.self.href">
+          {{item.nombre}} </option>
+      </select>
+    </div>
+
+    <div class="row mb-2">
+      <label class="cell-sm-4"> Tipos:</label>
+      <select >
+        <option > </option>
+      </select>
+    </div>
+</fieldset>
+  </div>
+  
+  <div id="borde1">
+
+<fieldset>
+    <legend>Resuldatos de Busqueda:</legend>
+    <p>[Cantidades encontradas..] </p>
+    <table class="table dataTables" >
+      <thead>
+        <tr > 
+          <th>#</th>
+          <th>EJEMPLARES ENCONTRADOS</th>   
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+         <td>1</td>
+      
+         <td></td>
+        </tr>
+      </tbody>
+    </table>
+</fieldset>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+#margen{
+    background: radial-gradient(rgb(63, 219, 219), rgb(9, 122, 122));
+    top: 10px;
+    left: 280px;
+    width: 80%;
+    color: white;
+}
+#borde{
+    top: 2%;
+     left: 5%;
+     width: 90%;
+ }
+ 
+#ff{
+    top: -62px;
+      left: 17%;
+      width: 10%;
+    }
+    #estu{
+     top: -60px;
+      left: 35%;
+      width: 15%;
+    }
+  #fi{
+     
+      width: 15%;
+    }
+    #radio{
+        top: -100px;
+        left: 60%; 
+    }
+      
+      .btn{
+        background: #000000;
+        border: 2px solid #ffffff;
+        border-radius: 5px;
+        color: #ffffff;
+       
+     }
+     #boton1{
+      position: absolute;
+     left: 30%;
+   }
+   #tabla2{
+      
+    left: 30%;
+    width: 35%;
+  }

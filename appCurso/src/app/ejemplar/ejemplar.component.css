@@ -1,0 +1,55 @@
+#margen{
+    background: radial-gradient(rgb(63, 219, 219), rgb(9, 122, 122));
+    left: 280px;
+    width: 80%;
+    color: white;
+}
+#borde{
+    top: 2%;
+     left: 5%;
+     width: 90%;
+ }
+
+#filtro{
+    top: -5px;
+    width: 20%;
+}
+#radio{
+    top: -240px;
+    left: 80%; 
+}
+.etiqueta{
+    left: 84%;
+}
+#btn1{
+    left: 50%;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    height: 40px;
+}
+span{
+    top: 5.5px;
+}
+#edi{
+    top: -72px;
+    left: 25%;
+    width: 15%;
+  }
+  #are{
+    top: -140px;
+    left: 43%;
+    width: 15%;
+  }
+#tipo{
+    top: -208px;
+    left: 60%;
+    width: 15%;
+  }
+  #tabla{
+    top: -200px;
+  }
+  #tabla2{
+    top: -100px; 
+    left: 30%;
+    width: 35%;
+  }

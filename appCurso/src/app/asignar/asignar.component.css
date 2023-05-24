@@ -1,0 +1,67 @@
+#margen{
+    background: radial-gradient(rgb(63, 219, 219), rgb(9, 122, 122));
+   
+    left: 280px;
+    width: 80%;
+   height: 850px;
+    color: white;
+}
+input:valid{
+    border: 2px solid rgb(132, 221, 81);
+}
+input:invalid{
+    border: 2px solid rgba(165, 21, 21, 0.959);
+}
+
+#borde{
+    top: 2%;
+     left: 5%;
+     width: 60%;
+ }
+ input{
+     width: 50%;
+ }
+ select{
+    width: 50%;
+ }
+ 
+ #btn1{
+     left: 20%;
+ }
+ #btn2{
+    top: -40px;
+     left: 40%;
+ }
+ .btn{
+    background: #000000;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    color: #ffffff;
+   
+ }
+
+ #asig{
+    
+    border-top: 2px solid rgb(255, 255, 255);
+    border-right: 2px solid rgb(255, 255, 255);
+    border-bottom: 2px solid rgb(255, 255, 255);
+    position: absolute;
+    top: 0%;
+    left: 70%;
+   width: 70%;
+ }
+ #ci{
+    border-top: 2px solid rgb(255, 255, 255);
+    border-right: 2px solid rgb(255, 255, 255);
+    border-bottom: 2px solid rgb(255, 255, 255);
+    position: absolute;
+    top: 75%;
+    left: 70%;
+   width: 70%;
+ }
+ #ojo{
+     position: absolute;
+     top: 10%;
+     left: 80%;
+
+ }

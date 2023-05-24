@@ -1,0 +1,31 @@
+<div id="margen"> 
+    <div id="borde">
+        <fieldset>
+            <legend>Adicionar Tipo:</legend>
+
+    <form (ngSubmit)="Enviar()" #form_tip="ngForm" >
+        <label type="number" name="codtipo" [(ngModel)]="tipo.codtipo"></label>
+        <div class="row mb-2">
+    <label  class="cell-sm-3"> Nombre del Tipo:</label>
+    <input type="text" name="nombre" class="primary" [(ngModel)]="tipo.nombre" required>
+    </div>
+
+    <label name="estado" [(ngModel)]="tipo.estado" value="0" required></label>
+        
+
+    <div class="row mb-2"> 
+    <label class="cell-sm-3">sw:</label>
+    <input type="number" name="sw" [(ngModel)]="tipo.sw"  required>
+    </div>
+    
+    <div id="btn1">
+    <button type="submit" class="btn" class="btn btn-secondary" [disabled]="!form_tip.valid" >Guardar</button>
+</div>  
+<div id="btn2">
+    <button type="reset" class="btn" class="btn btn-secondary">Cancelar</button>
+     </div>
+    </form>
+</fieldset>
+</div>
+</div>
+

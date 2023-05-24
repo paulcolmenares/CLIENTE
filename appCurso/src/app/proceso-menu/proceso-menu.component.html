@@ -1,0 +1,65 @@
+<div id="margen">
+  <fieldset>
+    <legend>Asignación Procesos a Menú:</legend>
+    <form [formGroup]="menu_pro">
+      <div id="t1">
+        <h2>Lista de Menús</h2>
+        <label>Filtro:</label>
+        <input type="text" placeholder="Buscar.." id="filtro1">
+
+       
+      </div>
+     <div id="proceso"> 
+        <h2>Lista de Procesos</h2>
+        <label>Filtro:</label>
+        <input type="text" placeholder="Buscar.." id="filtro1">
+        <div id="todos">
+          <input type="radio" name="fav_language">
+          <label>Todos:</label>
+        </div>
+        <div id="asig">
+          <input type="radio" name="fav_language">
+          <label for="css">SI asignado:</label>
+          <br>
+          <input type="radio" name="fav_language">
+          <label>NO asignado:</label>
+        </div>
+      </div>
+
+<div id="tabla">
+  <table class="table dataTables">
+    <thead>
+      <tr>
+      
+        <th>LISTA DE MENUS</th>
+        <th>LISTA DE PROCESOS</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+         
+            <select value="menu" placeholder="Seleccione un menu" formControlName="menu">
+              <option *ngFor="let item of lista" value="{{item._links.self.href}}">{{item.nombre}}</option>
+            </select>
+        
+        </td>
+<td>   <select formControlName="pro">
+<option *ngFor="let items of listas" value="{{items._links.self.href}}">{{items.nombre}}</option>
+</select></td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+        <div id="boton1"> 
+        <button class="btn" (click)="Agregar()">Añadir</button>
+       </div>
+        <div id="boton2">
+        <button class="btn" (click)="Eliminar()">Eliminar</button>
+   </div>
+
+    </form>
+  </fieldset>
+</div>

@@ -1,0 +1,33 @@
+#margen{
+    background: radial-gradient(rgb(63, 219, 219), rgb(9, 122, 122));
+  
+    left: 280px;
+    width: 80%;
+    color: white;
+}
+#borde{
+    top: 2%;
+     left: 25%;
+     width: 90%;
+ }
+ #btn1{
+     top: 39px;
+     left: 20%;
+ }
+ #btn2{
+     left: 50%;
+ }
+ .btn{
+    background: #000000;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    color: #ffffff;
+   
+ }
+ #in{
+     width: 40%;
+ }
+ #tabla{
+     left: 15%;
+    width: 60%;
+ }

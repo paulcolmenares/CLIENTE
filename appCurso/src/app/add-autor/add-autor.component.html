@@ -1,0 +1,48 @@
+<div id="margen">
+    <button ><a routerLink="/listar_autor" routerLinkActive="router-link-active"> 
+        <span class="mif-arrow-left mif-4x fg-black"></span></a></button>
+    <div id="borde">
+        <fieldset>
+            <legend>Adicionar Nuevo Autor:</legend>
+
+<form (ngSubmit)="Enviar()" #form_autor="ngForm"  >
+    <label type="number" name="coda" placeholder="Nombre" [(ngModel)]="autor.coda"></label>
+    <div class="row mb-2">
+     <label class="cell-sm-2">Nombre: </label>
+        <input type="text" name="nombre" [(ngModel)]="autor.nombre" class="primary" size=30 placeholder="Nombre" required>
+    </div>     
+
+    <div class="row mb-2">
+        <label class="cell-sm-2">Apellido Paterno: </label>
+        <input type="text" name="ap" [(ngModel)]="autor.ap" required>
+    </div>
+   
+    <div class="row mb-2">
+        <label class="cell-sm-2">Apellido Materno: </label>
+        <input type="text" name="am" [(ngModel)]="autor.am" required>
+    </div>
+
+    <div class="row mb-2">
+        <label class="cell-sm-2">Genero: </label>
+        <div class="cell-sm-10">
+        <input type="radio" data-role="radio" name="genero"  value="M" [(ngModel)]="autor.genero" data-caption="Masculino" required>
+        <input type="radio"data-role="radio" name="genero" value="F" [(ngModel)]="autor.genero"  data-caption="Femenino" required>
+    </div>
+</div>
+    <div>
+        <label name="estado" [(ngModel)]="autor.estado" value="0" required></label>
+      </div>
+
+      <div id="btn1">
+    <button  type="submit" class="btn" class="btn btn-secondary" [disabled]="!form_autor.valid" >Grabar</button>
+</div>  
+<div id="btn2">
+    <button type="reset"class="btn" class="btn btn-secondary">Cancelar</button>
+</div>
+</form>
+</fieldset>
+</div>
+</div>
+   
+
+

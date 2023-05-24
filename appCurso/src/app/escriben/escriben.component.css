@@ -1,0 +1,68 @@
+#margen{
+    background: radial-gradient(rgb(63, 219, 219), rgb(9, 122, 122));
+    top: 10px;
+    left: 280px;
+    width: 80%;
+    height: 90ex;
+    color: white;
+}
+
+#borde{
+    top: 2%;
+     left: 5%;
+     width: 90%;
+ }
+
+#filtro{
+    top: -5px;
+    width: 20%;
+}
+
+#t1{
+    position: absolute;
+    top: 15%;
+    left: 8%;
+    width: 40%;
+ }
+#t2{
+    position: absolute;
+ top: 15%;
+   left: 55%;
+   width: 40%;
+}
+#filtro1{
+    width: 40%;
+}
+#asig{
+    position: absolute;
+    top: 58px;
+    left: 68%;
+
+}
+#todos{
+    position: absolute;
+    top: 93px;
+    left: 48%;
+}
+
+#boton1{
+    position: absolute;
+    top:150px;
+   left: 35%;
+ }
+ .btn{
+    background: #000000;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    color: #ffffff;
+   
+ }
+ #boton2{
+    position: absolute;
+    top:150px;
+   left: 60%;
+ }
+ #tipos{
+     position: relative;
+     top: 210px;
+ }

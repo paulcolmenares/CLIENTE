@@ -1,0 +1,89 @@
+<div id="margen" >
+  <div id="borde">  
+   
+    <fieldset>
+      <legend>Gestión Textos: </legend>
+    <button id="btn1" class="button"><a routerLink="/add_texto" routerLinkActive="router-link-active">
+     <span class="mif-add mif-5x fg-black"></span></a></button>
+
+     <button id="btn2" class="button"><a routerLink="/asignar" routerLinkActive="router-link-active">
+      <span class="mif-import-contacts mif-5x fg-black"></span></a></button>
+
+     <div class="etiqueta"> 
+      <label>Nuevo Texto</label>
+    </div>
+    <div class="etiqueta1"> 
+      <label>Adicionar Autor</label>
+    </div>
+    <label >Filtro:</label> 
+    <input type="text" placeholder="Buscar.." id="filtro">
+
+    <div id="edi"> 
+    <label >Editorial:</label>
+    <select >
+      <option *ngFor="let item of edi" [value]="item._links.self.href">{{item.nombre}} </option>
+   </select>
+</div>
+
+<div id="are"> 
+    <label >Areas:</label>
+    <select >
+      <option *ngFor="let item of are" [value]="getID(item._links.self.href)">{{item.nombre}} </option> 
+    </select>
+
+</div>
+
+<div id="tipo"> 
+    <label >Tipos:</label>
+    <select >
+      <option *ngFor="let item of tip" [value]="getID(item._links.self.href)">{{item.nombre}} </option> 
+    </select>
+</div>
+ <div id="radio"> 
+    <input type="radio">Activos 
+    <input type="radio" >Bajas
+    <input type="radio" >Todos
+     </div>
+
+     <div id="tabla">
+    <table class="table striped">
+     <thead>
+       <tr>
+         <th>Titulo</th>
+         <th>Area</th>
+         <th>Editorial</th>
+         <th>Tipos</th>
+         <th>Estado</th>
+         <th>M</th>
+         <th>B</th>
+         <th>H</th>
+         <th>V</th>
+       </tr>
+     </thead>
+     <tbody>
+       <tr *ngFor="let item of datos"> 
+           <td> {{item.titulo | uppercase}} </td> 
+    <td></td>
+   
+            <td > </td>
+            <td></td>  
+            <td> 
+              <container-element [ngSwitch]="item.estado" color="light">
+                <div *ngSwitchCase="1">
+                  <span class="mif-thumbs-up mif-3x fg-black"></span>
+                </div>
+                <div *ngSwitchCase="0">
+                  <span class="mif-thumbs-down mif-3x fg-black" ></span>
+                </div>
+              </container-element></td>
+            <td><span class="mif-pencil mif-3x fg-black"  (click)="editar(item)"></span></td>
+            <td>  <span class="mif-bin mif-3x fg-black" (click)="Eliminar(item)"></span></td>
+        <td> <span class="mif-spinner4 mif-3x fg-black"  (click)="Habilitar(item)"></span></td>
+        <td> <span class="mif-printer mif-3x fg-black" (click)="pdf()" ></span></td>
+           </tr>
+     </tbody>
+   </table>
+  </div> 
+</fieldset>
+ </div>
+</div>

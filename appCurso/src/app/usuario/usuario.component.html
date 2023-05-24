@@ -1,0 +1,97 @@
+
+<div id="margen">
+  <div id="borde">   
+    <fieldset>
+  <legend>Gestión Usuarios: </legend>
+  <button id="btn1" class="button"><a routerLink="/add_usuario" routerLinkActive="router-link-active"> 
+    <span class="mif-user-plus mif-4x fg-black"></span></a>
+  </button> 
+
+  <button  id="btntel" class="button"><a routerLink="/add_telefono" routerLinkActive="router-link-active"> 
+    <span class="mif-contacts-dialer mif-3x fg-black"></span></a>
+  </button> 
+
+  
+  <div class="etiqueta"> 
+  <label >Nuevo Personal</label>
+</div>
+   <div class="tel"> 
+    <label >Adicionar Telefono</label>
+  </div>
+  <label>Filtro:</label>
+  <input type="text" class="form-control" placeholder="Buscar" id="filtro" name="filterPost" [(ngModel)]="filterPost">
+
+  <div id="tipo"> 
+  <label>Tipo Personal:</label>
+  <select>
+    <option>Administrativo</option>
+    <option>Publicos</option>
+    <option>Todos</option>
+  </select>
+</div>
+
+<div id="radio"> 
+  <input type="radio" name="fav_language">
+  <label>Activos:</label>
+  <input type="radio" name="fav_language" value="CSS">
+  <label >Bajas:</label>
+  <input type="radio" name="fav_language">
+  <label>Todos:</label>
+</div>
+
+
+  <table class="table">
+    <!--data-role="table" data-rows="5"-->
+    <thead>
+      <tr>
+        <th>Foto</th>
+        <th>Apellidos y Nombres</th>
+        <th>Estado</th>
+        <th>tipo</th>
+        <th>M</th>
+        <th>B</th>
+        <th>H</th>
+        <th>V</th>
+        <th>K</th>
+    
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of usuarios | filter: filterPost ">
+        <td><img src="data:image/png;base64,{{ item.foto }}"></td>
+        <td>{{ item.ap | uppercase}} {{ item.am | uppercase}} {{ item.nombre | uppercase}}  </td>
+       
+        <td> 
+          <container-element [ngSwitch]="item.estado" color="light">
+            <div *ngSwitchCase="1">
+              <span class="mif-thumbs-up mif-3x fg-black"></span>
+            </div>
+            <div *ngSwitchCase="0">
+              <span class="mif-thumbs-down mif-3x fg-black" ></span>
+            </div>
+          </container-element></td>
+
+        <td> {{ item.tipoper }}</td>
+        <td>
+          <span class="mif-pencil mif-3x fg-black"  (click)="Editar(item)"></span>
+        </td>
+        <td>
+          <span class="mif-bin mif-3x fg-black" (click)="Eliminar(item)"></span>
+        </td>
+        <td>  <span class="mif-spinner4 mif-3x fg-black"(click)="Habilitar(item)"></span>
+          
+         
+        </td>
+        <td> <span class="mif-printer mif-3x fg-black" (click)="pdf2(item)"></span></td>
+        <td>
+          <a routerLink="/asig_usuario" routerLinkActive="router-link-active">
+            <span class="mif-blocked mif-3x fg-black"></span>
+          </a>
+        </td>
+       
+      </tr>
+    </tbody>
+  </table>
+</fieldset>
+</div>
+</div>

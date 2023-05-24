@@ -1,0 +1,43 @@
+
+#cabecera{
+ height: 130px;
+ background: #024959;
+border: 4px #ffffff solid;
+}
+p{
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-size: larger;
+ font-family: 'PT Sans';
+}
+#logo{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+   width: 160px;
+    border: 2px #ffffff solid;
+}
+
+#nombre{ 
+  position: absolute;
+  top: 30px;
+  right: 150px
+ 
+}
+#user{
+  position: absolute;
+  top: 30px;
+  right: 50px
+}
+#Nuser{ 
+  position: absolute;
+  top: 50px;
+  right:100px;
+}
+
+select{
+  position: absolute;
+  top: 55px;
+  left: 75%;
+  width: 15%;
+}

@@ -1,0 +1,79 @@
+<div id="margen">
+  <div id="borde">   
+    <fieldset>
+      <legend>Gestión Editoriales: </legend>
+  <button class="button" id="btn1"><a routerLink="/add_editorial" routerLinkActive="router-link-active">
+      <span class="mif-add mif-5x fg-black"></span></a>
+  </button>
+  <div class="etiqueta"> 
+    <label>Nueva Editorial</label>
+  </div>
+  <label>Filtro:</label>
+  <input type="text" class="form-control" placeholder="Buscar" id="filtro" name="filterPost" [(ngModel)]="filterPost">
+
+  <div id="radio"> 
+  <input type="radio" name="fav_language"> <label>Activos:</label>
+  <input type="radio" name="fav_language" value="CSS"> <label for="css">Bajas:</label>
+  <input type="radio" name="fav_language"> <label>Todos:</label>
+</div>
+
+  <table class="table striped">
+    <!--data-role="table" data-rows="5"-->
+    <thead>
+      <tr>
+        <th>Nombre de la editorial</th>
+        <th>Estado</th>
+        <th>M</th>
+        <th>B</th>
+        <th>H</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of datos | filter: filterPost ">
+        <td> {{ item.nombre | uppercase}} </td>
+        <td> 
+          <container-element [ngSwitch]="item.estado" color="light">
+            <div *ngSwitchCase="1">
+              <span class="mif-thumbs-up mif-3x fg-black"></span>
+            </div>
+            <div *ngSwitchCase="0">
+              <span class="mif-thumbs-down mif-3x fg-black" ></span>
+            </div>
+          </container-element></td>
+        <td> <span class="mif-pencil mif-3x fg-black" (click)="editar(item)"></span></td>
+        <td> <span class="mif-bin mif-3x fg-black" (click)="Eliminar(item)"></span>
+
+        </td>
+        <td><span class="mif-spinner4 mif-3x fg-black"(click)="Habilitar(item)" ></span></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <!--   mostar libros 
+<div *ngIf="datos" class="row">
+    <div class="card" style="width: 150px;" *ngFor="let item of datos">
+        <div class="card-header bg-green small">
+            {{ item.nombre }}
+        </div>
+        <div class="card-content p-3 small">
+            {{ item.estado }}
+        </div>
+        <div class="card-footer bg-gray small">
+            <span class="mif-assignment mif-0.75x fg-green" (click)="obtenerTexto(item._links.codtexto.href)">Textos</span>
+            <table *ngIf="textos">
+                <tr *ngFor="let grp of textos">
+                    <td>{{ grp.titulo}}</td>
+                    <td>{{grp.resumen}}</td>
+                    <td>{{grp.isbn}}</td>
+                    <td>{{grp.edicion}}</td>
+                    <td>{{grp.fechapub}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+-->
+</fieldset>
+</div>
+</div>

@@ -1,0 +1,61 @@
+<div id="margen">
+  <button ><a routerLink="/listar_usuario" routerLinkActive="router-link-active"> 
+    <span class="mif-arrow-left mif-4x fg-black"></span></a></button>
+  <fieldset>
+    <legend>Adicionar Telefonos: </legend>
+ 
+    <div id="borde">   
+      <form (ngSubmit)="Enviar()" #form_telefono="ngForm">
+        <div id="in"> 
+          <div>
+            <label for=""> Persona:</label>
+            <select   name="codper" ngModel required> 
+              <option *ngFor="let item of lista" value="{{item._links.self.href}}">
+            
+                {{item.nombre | uppercase}} {{item.ap | uppercase}} </option>
+            </select>
+          </div>
+      
+         <div>
+             <label for="">Ingrese el Telefono:</label>
+             <input type="number" name="numero" ngModel required >
+         </div>
+        
+          <div id="btn1">
+            <button class="btn" class="btn btn-secondary" type="submit"
+                [disabled]="!form_telefono.valid">Guardar</button>
+      
+        </div>
+        <div id="btn2">
+            <button type="reset" class="btn" class="btn btn-secondary">Cancelar</button>
+        </div>
+      </div>
+          </form>
+       
+      </div> 
+      <div id="tabla"> 
+  
+    <table class="table striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Codigo de la persona</th>
+          <th>Nº de Celular</th>
+          <th>B</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of tel,  let indice=index">
+          <td>{{indice+1}} </td>
+          <td>{{item.codper}}</td>
+          <td>{{item.numero}} </td>
+          <td>
+            <span class="mif-bin mif-3x fg-black" (click)="Eliminar(item)"></span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+</fieldset>
+</div>
+

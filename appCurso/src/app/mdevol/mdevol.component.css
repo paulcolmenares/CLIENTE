@@ -1,0 +1,33 @@
+#margen{
+    background: radial-gradient(rgb(63, 219, 219), rgb(9, 122, 122));
+    left: 285px;
+    width: 80%;
+   
+    color: white;
+}
+#borde{
+    top: 2%;
+     left: 15%;
+     width: 80%;
+ }
+ .btn{
+    background: #000000;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    color: #ffffff;
+   
+ }
+ #boton{
+    position: absolute;
+    top:30s0px;
+   left: 20%;
+ }
+ #boton1{
+   position: absolute;
+   top:300px;
+  left: 50%;
+}
+#tabla{
+  position: relative;
+ top: 30px;
+}

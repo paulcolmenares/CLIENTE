@@ -1,0 +1,57 @@
+<div id="margen">
+  <button ><a routerLink="/list_prestamo-ejemplar" routerLinkActive="router-link-active"> 
+    <span class="mif-arrow-left mif-4x fg-black"></span></a></button>
+<div id="borde">
+  <fieldset>
+      <legend>Nuevo Prestamo..</legend>
+      <form (ngSubmit)="Enviar()" #form_pres="ngForm">
+<div class="row mb-2"> 
+    <label class="cell-sm-2">Fecha:</label>
+    <input type="date" name="fecha" ngModel required >
+    
+    </div>
+<div class="row mb-2">  
+<label class="cell-sm-2">Fecha Inicio:</label>
+<input type="date" name="fini" ngModel  required >
+</div>
+<div class="row mb-2"> 
+<label class="cell-sm-2">Fecha Fin:</label>
+<input type="date" name="ffin" ngModel  required>
+
+</div>
+
+<div class="row mb-2">
+  <label class="cell-sm-2">Estado:</label>  
+  <div> 
+      <input type="radio" data-role="radio" name="estado"  value="1" ngModel data-caption="Activo" required>
+      <input type="radio" data-role="radio" name="estado" value="0" ngModel data-caption="Anulado" required>
+    </div>
+</div>
+
+<div class="row mb-2">
+    <label class="cell-sm-2">Tipo Prestamo:</label>  
+    <div> 
+        <input type="radio" data-role="radio" name="tipopres"  value="2" ngModel data-caption="En Sala" required>
+        <input type="radio" data-role="radio" name="tipopres" value="1" ngModel data-caption="Domicilio" required>
+      </div>
+</div>
+
+
+<div id="estu">  
+  <label for="">Estudiante con CI:</label>
+  <select name="ci" ngModel>
+  <option *ngFor="let item of per" [value]="item._links.self.href">{{item.ci}} </option> 
+  </select >
+  </div>
+    <label name="estado" value="0" ngModel  required></label>
+  
+<div id="btn1">
+    <button type="submit" class="btn" class="btn btn-secondary">Guardar</button>
+  </div>  
+  <div id="btn2">
+    <button type="reset"class="btn" class="btn btn-secondary">Cancelar</button>  
+ </div>
+</form>
+</fieldset>
+</div>
+</div>

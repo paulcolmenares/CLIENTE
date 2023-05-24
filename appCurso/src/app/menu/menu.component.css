@@ -1,0 +1,25 @@
+div{
+    top: 15%;
+    left: -1%;
+    position: absolute;  
+}
+li{
+
+    background: #024959;
+   
+    color: rgb(255, 255, 255);
+}
+a:hover{
+    background: #037E8C;
+    
+}
+nav{
+  position: absolute;
+  top: 17px;
+  border: 2px #ffffff solid;
+   width: 282px;
+}
+.menu-fixed{
+   
+  
+}

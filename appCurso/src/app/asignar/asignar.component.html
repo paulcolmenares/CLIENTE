@@ -1,0 +1,150 @@
+<div id="margen">
+  <button ><a routerLink="/listar_usuario" routerLinkActive="router-link-active"> 
+    <span class="mif-arrow-left mif-4x fg-black"></span></a></button>
+  <div id="borde">
+    <fieldset>
+      <legend>[DATOS PERSONALES]</legend>
+      <form  #form_usuario="ngForm">
+        <div class="row mb-2">
+            <label class="cell-sm-2">CodPersona: </label>
+            <div class="cell-sm-10">
+                <input type="number" name="codper" [(ngModel)]="usu.codper" required>
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <label class="cell-sm-2">Nombre: </label>
+            <div class="cell-sm-10">
+                <input type="text" name="nombre" [(ngModel)]="usu.nombre" size=60 placeholder="Nombre" required>
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <label class="cell-sm-2">Apellido Paterno: </label>
+            <div class="cell-sm-10">
+                <input type="text" name="ap" [(ngModel)]="usu.ap">
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <label class="cell-sm-2">Apellido Materno: </label>
+            <div class="cell-sm-10">
+                <input type="text" name="am" [(ngModel)]="usu.am">
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <label class="cell-sm-2">Género: </label>
+            <div class="cell-sm-10">
+                <input type="radio" data-role="radio" name="genero" value="M" [(ngModel)]="usu.genero"
+                    data-caption="Masculino" required>
+                <input type="radio" data-role="radio" name="genero" value="F" [(ngModel)]="usu.genero"
+                    data-caption="Femenino" required>
+            </div>
+        </div>
+        <div class="row mb-2">
+            <label class="cell-sm-2">Tipo Persona: </label>
+            <div class="cell-sm-10">
+                <select name="tipoper" [(ngModel)]="usu.tipoper" required>
+                    <option value="A">Administrativo</option>
+                    <option value="P">Publico</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="row mb-2">
+            <label class="cell-sm-2">Foto:</label>
+
+            <input type="hidden" name="foto" ngModel>
+
+        </div>
+        <!-- Introducir fotografia-->
+        <div class="row">
+            <div class="img-container cell-2">
+                <ng-container *ngIf="isImageSaved; else elseTemplate">
+                    <img [src]="cardImageBase64" width=100px height=100px />
+                </ng-container>
+                <ng-template #elseTemplate>
+                    <img src="./../../assets/usuario.png" class="img-responsive">
+                </ng-template>
+            </div>
+        </div>
+      </form>
+
+
+  <div id="asig"> 
+ 
+    <button><a routerLink="/asignar-usuario" routerLinkActive="router-link-active"> 
+      <span class="mif-eye mif-4x fg-black"></span></a></button>
+
+      <form (ngSubmit)="Enviar()" #form_user="ngForm">
+        <legend>Asignacion de un Usuario</legend>
+      <div class="row mb-2">
+       <label class="cell-sm-2">Login: </label>
+        <div class="cell-sm-10">
+          <input type="text" name="login" ngModel required>
+        </div>
+      </div>
+
+      <div class="row mb-2">
+        <label class="cell-sm-2">Contraseña: </label>
+        <div class="cell-sm-10">
+          <input type="text" name="passwd" ngModel  required>
+        </div>
+      </div>
+        <div class="row mb-2">
+          <label class="cell-sm-2">Estado: </label>
+          <div class="cell-sm-10">
+              <input type="radio" data-role="radio" name="estado" value="1" ngModel
+                  data-caption="Activo" required>
+              <input type="radio" data-role="radio" name="estado" value="0" ngModel
+                  data-caption="Anulado" required>
+          </div>
+      </div>    
+      <div class="row mb-2">
+          <label class="cell-sm-2"> Persona:</label>
+          <select name="codper" ngModel>
+            <option *ngFor="let item of per" [value]="item._links.self.href">
+              {{item.nombre}}     {{item.ap}}  </option>
+          </select>
+        </div>
+      <div id="btn1">
+        <button type="submit" class="btn" class="btn btn-secondary" >Guardar</button>
+      </div>
+      <div id="btn2">
+        <button type="reset" class="btn" class="btn btn-secondary">Cancelar</button>
+      </div>
+      </form>
+    </div>
+    <div id="ci"> 
+      <button ><a routerLink="/ci" routerLinkActive="router-link-active"> 
+        <span class="mif-eye mif-4x fg-black"></span></a></button>
+      <form (ngSubmit)="Enviar1()" #form_dato="ngForm">
+        <legend>Asignacion de CI a una persona</legend>
+      <div class="row mb-2">
+       <label class="cell-sm-2">CI: </label>
+        <div class="cell-sm-10">
+          <input type="number" name="ci" ngModel required>
+        </div>
+      </div>
+        
+      <div class="row mb-2">
+          <label class="cell-sm-2"> Persona:</label>
+          <select name="codper" ngModel>
+            <option *ngFor="let item of per" [value]="item._links.self.href">
+              {{item.nombre}}      {{item.ap}}</option>
+          </select>
+        </div>
+      <div id="btn1">
+        <button type="submit" class="btn" class="btn btn-secondary" >Guardar</button>
+      </div>
+      <div id="btn2">
+        <button type="reset" class="btn" class="btn btn-secondary">Cancelar</button>
+      </div>
+      </form>
+    </div>
+
+    
+    </fieldset>
+  </div>
+</div>

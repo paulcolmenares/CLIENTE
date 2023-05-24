@@ -1,0 +1,28 @@
+<div id="margen">
+  <button ><a routerLink="/list_area" routerLinkActive="router-link-active"> 
+    <span class="mif-arrow-left mif-4x fg-black"></span></a></button>
+  <div id="borde">
+    <fieldset>
+      <legend>Adicionar Area:</legend>
+
+  <form (ngSubmit)="Enviar()" #form_area="ngForm">
+    <label type="number" name="coda" placeholder="Nombre" [(ngModel)]="area.coda"></label>
+    <div class="row mb-2">
+      <label class="cell-sm-2"> Nombre del Area:</label>
+      <div class="cell-sm-10">
+        <input type="text" name="nombre" class="primary" [(ngModel)]="area.nombre" placeholder="Nombre" required>
+      </div>
+    </div>
+    <div>
+      <label name="estado" [(ngModel)]="area.estado" value="0" required></label>
+    </div>
+    <div id="btn1">
+      <button class="btn" class="btn btn-secondary" [disabled]="!form_area.valid">Aceptar</button>
+    </div>
+     <div id="btn2">
+      <button class="btn" class="btn btn-secondary" type="reset">Cancelar</button>
+    </div>
+  </form>
+</fieldset>
+</div>
+</div>

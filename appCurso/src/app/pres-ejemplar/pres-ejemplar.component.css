@@ -1,0 +1,78 @@
+#margen{
+    background: radial-gradient(rgb(63, 219, 219), rgb(9, 122, 122));
+    left: 280px;
+    width: 80%;
+    color: white;
+}
+#borde{
+    top: 2%;
+     left: 5%;
+     width: 90%;
+ }
+
+#filtro{
+    top: -5px;
+    width: 20%;
+}
+#radio{
+    top: -170px;
+    left: 60%; 
+}
+.etiqueta{
+    left: 79%;
+}
+#btn1{
+    left: 80%;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    height: 40px;
+}
+span{
+    top: 5.5px;
+}
+#ff{
+  top: -62px;
+    left: 17%;
+    width: 15%;
+  }
+  #estu{
+    top: -130px;
+    left: 35%;
+    width: 15%;
+  }
+#fi{
+   
+    width: 15%;
+  }
+
+  #tabla{
+    top: -120px;
+  }
+  #tabla2{
+    top: -100px; 
+    left: 5%;
+    width: 35%;
+  }
+  #tabla3{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    width: 35%;
+  }
+  #boton1{
+    position: absolute;
+    top:150px;
+   left: 15%;
+ }
+ .btn{
+    background: #000000;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    color: #ffffff;
+   
+ }
+ #boton2{
+    position: absolute;
+    top:150px;
+   left: 50%;
+ }

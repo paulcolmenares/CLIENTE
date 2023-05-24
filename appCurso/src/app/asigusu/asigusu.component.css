@@ -1,0 +1,18 @@
+#margen{
+    background: radial-gradient(rgb(63, 219, 219), rgb(9, 122, 122));
+   
+    left: 18.5%;
+    width: 80%;
+  
+    color: white;
+}
+#borde{
+    top: 2%;
+     left: 15%;
+     width: 70%;
+ }
+ #btn1{
+     position: absolute;
+     top: 20%;
+     left: 50%;
+ }

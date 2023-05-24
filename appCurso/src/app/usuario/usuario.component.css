@@ -1,0 +1,60 @@
+#margen{
+    background: radial-gradient(rgb(63, 219, 219), rgb(9, 122, 122));
+    left: 280px;
+    width: 85%;
+    color: white;
+}
+#nom{
+    color: black;
+}
+img{
+    width: 80px;
+    
+}
+#borde{
+   top: 2%;
+    left: 5%;
+    width: 90%;
+}
+#filtro{
+    top: -5px;
+    width: 20%;
+}
+#tipo{
+    top: -72px;
+    left: 35%;
+    width: 15%;
+  }
+  #radio{
+    top: -100px;
+    left: 65%;
+   
+  }
+ 
+  #btn1{
+    left: 85%;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    height: 50px;
+
+}
+span{
+    top: 5.5px;
+}
+.etiqueta{
+    left: 83%;
+}
+#btntel{
+    position: absolute;
+    top: 180px;
+    left: 85%;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    height: 50px;
+
+}
+.tel{
+    position: absolute;
+    top: 225px;
+    left: 82%;
+}

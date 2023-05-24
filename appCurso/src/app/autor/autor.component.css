@@ -1,0 +1,37 @@
+#margen{
+    background: radial-gradient(rgb(63, 219, 219), rgb(9, 122, 122));
+    left: 280px;
+    width: 80%;
+    height: 90ex;
+    color: white;
+}
+#borde{
+    top: 10px;
+    left: 60px;
+    width: 90%;
+}
+
+#btn1{
+    top: 1%;
+    left: 85%;
+    border: 2px solid #000000;
+    border-radius: 5px;
+
+}
+#radio{
+    top: -40px;
+    left: 45%;
+}
+span{
+    top: 5.5px;
+}
+#filtro{
+    top: -5px;
+    width: 20%;
+}
+div{
+    color: rgb(255, 255, 255);
+}
+.etiqueta{
+    left: 84%;
+}
